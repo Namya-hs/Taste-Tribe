@@ -23,5 +23,26 @@ namespace Users.Controllers
             var u = _user.SendMessage("User-Topic", JsonSerializer.Serialize(user));
             return Ok(u);
         }
+
+        [HttpGet]
+        public IActionResult GetUser([FromRoute] string id)
+        {
+            var u = _user.SendMessage("User-Topic", id);
+            return Ok(u);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateUser([FromBody] UserDto user) 
+        {
+            var u = _user.SendMessage("User-Topic", JsonSerializer.Serialize(user));
+            return Ok(u);
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteUser([FromRoute] string id)
+        {
+            var u = _user.SendMessage("User-Topic", id);
+            return Ok(u);
+        }
     }
 }
