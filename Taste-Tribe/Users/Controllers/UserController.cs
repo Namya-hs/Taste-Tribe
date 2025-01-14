@@ -16,7 +16,7 @@ namespace Users.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public IActionResult CreateUser([FromBody] UserDto user)
         {
